@@ -32,11 +32,11 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 async function getUserData(userName) {
     const userResponse = await getUser(userName)
     const reposResponse = await getRepos(userName)
-    if (userResponse.message === 'Not Found') {
-        screen.renderNotFound()
-    } else {
-        user.setUserInfo(userResponse)
-        user.setReposInfo(reposResponse)
-        screen.renderUser(user)
-    }
+    if (userResponse.message === 'Not Found') screen.renderNotFound()
+
+    user.setUserInfo(userResponse)
+    user.setReposInfo(reposResponse)
+    screen.renderUser(user)
+    console.log(user);
+
 }
