@@ -121,12 +121,12 @@ main {
   line-height: 23px;
 }
 
-/* REPOSITORIES */
-
-.container .profile-data .repositories h2{
+h2{
   margin-bottom: 30px;
   text-align: center;
 }
+
+/* REPOSITORIES */
 
 .container .profile-data .repositories ul{
   display: flex;
@@ -146,6 +146,19 @@ main {
 .container .profile-data .repositories ul li a:hover{
   background-color:hotpink;
   color: #fff
+}
+
+/* ACTIVITIES */
+
+.activities ul li {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.activities ul li a {
+  font-weight: 700;
 }
 
 .container .profile-data.hide{
