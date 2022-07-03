@@ -7,8 +7,8 @@ const screen = {
                                             <h1>${user.name ?? 'Não possui nome cadastrado 😥'}</h1>
                                             <h2>${user.userName ?? 'Não possui login cadastrado 😥'}</h2>
                                             <p>${user.bio ?? 'Não possui bio cadastrada 😥'}</p>
-                                            <p class="follow">Followers: ${user.followers}</p>
-                                            <p class="follow">Following: ${user.following}</p>
+                                            <p class="follow">👥 Followers: ${user.followers}</p>
+                                            <p class="follow">👥 Following: ${user.following}</p>
                                         </div>
                                     </div>`
 
@@ -21,7 +21,7 @@ const screen = {
                         <spam>${repo.forks} 🍴</spam>
                         <spam>${repo.stargazers_count} 🌟</spam>
                         <spam>${repo.watchers} 👀</spam>
-                        <spam>${repo.language ?? 'markdown'} 📖</spam>
+                        <spam>${repo.language ?? 'Markdown'} 📖</spam>
                     </div>
                 </a>
             </li>`)

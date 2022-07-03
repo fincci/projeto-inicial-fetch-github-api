@@ -40,5 +40,4 @@ async function getUserData(userName) {
     user.setReposInfo(reposResponse)
     user.setActivitiesInfo(activitiesResponse)
     screen.renderUser(user)
-    console.log(user);
 }
