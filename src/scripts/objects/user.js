@@ -20,7 +20,6 @@ const user = {
     },
     setActivitiesInfo(activities) {
         this.activities = activities
-        console.log(activities);
     }
 }
 

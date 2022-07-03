@@ -13,7 +13,18 @@ const screen = {
                                     </div>`
 
         let reposItens = ''
-        user.repos.forEach(repo => reposItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`)
+        user.repos.forEach(repo => reposItens += 
+            `<li>
+                <a href="${repo.html_url}" target="_blank">
+                    <h3>${repo.name}</h3>
+                    <div class="count">
+                        <spam>${repo.forks} 🍴</spam>
+                        <spam>${repo.stargazers_count} 🌟</spam>
+                        <spam>${repo.watchers} 👀</spam>
+                        <spam>${repo.language} 📖</spam>
+                    </div>
+                </a>
+            </li>`)
 
         if (user.repos.length > 0) {
             this.userProfile.innerHTML += `<div class="repositories section">

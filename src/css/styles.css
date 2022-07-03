@@ -148,6 +148,17 @@ h2{
   color: #fff
 }
 
+.repositories ul li a h3 {
+  margin-bottom: 10px;
+}
+
+.count spam {
+  background-color: #7d43c9;
+  color: #FFFFFF;
+  border-radius: 7px;
+  padding: 5px;
+}
+
 /* ACTIVITIES */
 
 .activities ul li {
