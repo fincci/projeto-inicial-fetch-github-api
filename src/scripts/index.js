@@ -34,10 +34,14 @@ async function getUserData(userName) {
     const userResponse = await getUser(userName)
     const reposResponse = await getRepos(userName)
     const activitiesResponse = await getActivities(userName)
-    if (userResponse.message === 'Not Found') screen.renderNotFound()
+    if (userResponse.message === 'Not Found') {
+        screen.renderNotFound()
+        console.log(userResponse.message);
+    } else {
+        user.setUserInfo(userResponse)
+        user.setReposInfo(reposResponse)
+        user.setActivitiesInfo(activitiesResponse)
+        screen.renderUser(user)
+    }
 
-    user.setUserInfo(userResponse)
-    user.setReposInfo(reposResponse)
-    user.setActivitiesInfo(activitiesResponse)
-    screen.renderUser(user)
 }
