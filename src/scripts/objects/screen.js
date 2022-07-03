@@ -21,7 +21,7 @@ const screen = {
                         <spam>${repo.forks} 🍴</spam>
                         <spam>${repo.stargazers_count} 🌟</spam>
                         <spam>${repo.watchers} 👀</spam>
-                        <spam>${repo.language} 📖</spam>
+                        <spam>${repo.language ?? 'markdown'} 📖</spam>
                     </div>
                 </a>
             </li>`)
