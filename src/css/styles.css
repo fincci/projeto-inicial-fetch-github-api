@@ -153,6 +153,12 @@ h2{
   margin-bottom: 10px;
 }
 
+.count {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
 .count spam {
   background-color: #765ee2;
   color: #FFFFFF;
