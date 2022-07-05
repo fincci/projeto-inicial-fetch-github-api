@@ -18,10 +18,10 @@ const screen = {
                 <a href="${repo.html_url}" target="_blank">
                     <h3>${repo.name}</h3>
                     <div class="count">
-                        <spam>${repo.forks} 🍴</spam>
-                        <spam>${repo.stargazers_count} 🌟</spam>
-                        <spam>${repo.watchers} 👀</spam>
-                        <spam>${repo.language ?? 'Markdown'} 📖</spam>
+                        <span>${repo.forks} 🍴</span>
+                        <span>${repo.stargazers_count} 🌟</span>
+                        <span>${repo.watchers} 👀</span>
+                        <span>${repo.language ?? 'Markdown'} 📖</span>
                     </div>
                 </a>
             </li>`)
