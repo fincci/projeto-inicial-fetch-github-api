@@ -41,7 +41,9 @@ async function getUserData(userName) {
         user.setUserInfo(userResponse)
         user.setReposInfo(reposResponse)
         user.setActivitiesInfo(activitiesResponse)
-        screen.renderUser(user)
+        screen.renderProfile(user)
+        screen.renderRepo(user)
+        screen.renderActivities(user)
     }
 
 }

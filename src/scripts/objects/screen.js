@@ -1,19 +1,20 @@
 const screen = {
     userProfile: document.querySelector('.profile-data'),
-    renderUser(user) {
-        this.userProfile.innerHTML = `<div class="info">
-                                        <img src="${user.avatarUrl}" alt="Foto de perfil do usuário" />
-                                        <div class="data">
-                                            <h1>${user.name ?? 'Não possui nome cadastrado 😥'}</h1>
-                                            <h2>${user.userName ?? 'Não possui login cadastrado 😥'}</h2>
-                                            <p>${user.bio ?? 'Não possui bio cadastrada 😥'}</p>
-                                            <p class="follow">👥 Followers: ${user.followers}</p>
-                                            <p class="follow">👥 Following: ${user.following}</p>
-                                        </div>
-                                    </div>`
-
+    renderProfile(user) {
+        this.userProfile.innerHTML =    `<div class="info">
+                                            <img src="${user.avatarUrl}" alt="Foto de perfil do usuário" />
+                                            <div class="data">
+                                                <h1>${user.name ?? 'Não possui nome cadastrado 😥'}</h1>
+                                                <h2>${user.userName ?? 'Não possui login cadastrado 😥'}</h2>
+                                                <p>${user.bio ?? 'Não possui bio cadastrada 😥'}</p>
+                                                <p class="follow">👥 Followers: ${user.followers}</p>
+                                                <p class="follow">👥 Following: ${user.following}</p>
+                                            </div>
+                                        </div>`
+    },
+    renderRepo(user) {
         let reposItens = ''
-        user.repos.forEach(repo => reposItens += 
+        user.repos.forEach(repo => reposItens +=
             `<li>
                 <a href="${repo.html_url}" target="_blank">
                     <h3>${repo.name}</h3>
@@ -21,18 +22,19 @@ const screen = {
                         <span>${repo.forks} 🍴</span>
                         <span>${repo.stargazers_count} 🌟</span>
                         <span>${repo.watchers} 👀</span>
-                        <span>${repo.language ?? 'Markdown'} 📖</span>
+                        <span>${repo.language ?? '!language'} 📖</span>
                     </div>
                 </a>
             </li>`)
 
         if (user.repos.length > 0) {
-            this.userProfile.innerHTML += `<div class="repositories section">
-                                            <h2>Repositories</h2>
-                                            <ul>${reposItens}</ul>
+            this.userProfile.innerHTML +=   `<div class="repositories section">
+                                                <h2>Repositories</h2>
+                                                <ul>${reposItens}</ul>
                                             </div>`
         }
-
+    },
+    renderActivities(user) {
         let activitiesItens = ''
         user.activities.forEach(activities => {
             if (activities.type === "PushEvent") {
@@ -47,12 +49,11 @@ const screen = {
         })
 
         if (user.activities.length > 0) {
-            this.userProfile.innerHTML += `<div class="activities section">
-                                            <h2>Activities</h2>
-                                            <ul>${activitiesItens}</ul>
+            this.userProfile.innerHTML +=   `<div class="activities section">
+                                                <h2>Activities</h2>
+                                                <ul>${activitiesItens}</ul>
                                             </div>`
         }
-
     },
     renderNotFound() {
         this.userProfile.innerHTML = "<h3>User not found</h3>"
